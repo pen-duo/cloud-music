@@ -1,8 +1,10 @@
 const path = require("path");
 const resolve = (dir) => path.resolve(__dirname, dir);
-module.export = {
+module.exports = {
   webpack: {
-    "@": resolve("src"),
-    components: resolve("src/components"),
+    alias: {
+      "@": resolve("src"),
+      components: resolve("src/components"),
+    },
   },
 };
