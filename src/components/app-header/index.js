@@ -3,6 +3,8 @@ import React, { memo } from "react";
 import { headerLinks } from "../../common/loacl-data";
 
 import { NavLink } from "react-router-dom";
+import { Input } from "antd";
+import { SearchOutlined } from "@ant-design/icons";
 import { AppHeaderWrapper, HeaderLeft, HeaderRight } from "./style";
 export default memo(function MHAppFooter() {
   const showSelectedItem = (item, index) => {
@@ -38,7 +40,15 @@ export default memo(function MHAppFooter() {
             })}
           </div>
         </HeaderLeft>
-        <HeaderRight>Right</HeaderRight>
+        <HeaderRight>
+          <Input
+            className="search"
+            placeholder="音乐/视频/电台/用户"
+            prefix={<SearchOutlined />}
+          ></Input>
+          <div className="center">创作者中心</div>
+          <div>登录</div>
+        </HeaderRight>
       </div>
       <div className="divider"></div>
     </AppHeaderWrapper>
