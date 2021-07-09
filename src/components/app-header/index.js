@@ -1,6 +1,6 @@
 import React, { memo } from "react";
 
-import { headerLinks } from "../../common/loacl-data";
+import { headerLinks } from "@/common/local-data";
 
 import { NavLink } from "react-router-dom";
 import { Input } from "antd";
