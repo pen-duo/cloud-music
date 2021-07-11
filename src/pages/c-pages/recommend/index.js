@@ -1,20 +1,13 @@
-import React, { memo, useEffect } from "react";
-import { getTopBannerAction } from "./store/actionCreators";
-import { useSelector, useDispatch, shallowEqual } from "react-redux";
+import React, { memo } from "react";
+
+import { RecommendWrapper } from "./style";
+
+import MHTopBanner from "./c-cpns/top-banner";
 function MHRecommend() {
-  const { topBanners } = useSelector((state) => {
-    return {
-      topBanners: state.getIn(["recommend", "topBanners"]),
-    };
-  }, shallowEqual);
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getTopBannerAction());
-  }, [dispatch]);
   return (
-    <div>
-      <h2>{topBanners.length}</h2>
-    </div>
+    <RecommendWrapper>
+      <MHTopBanner></MHTopBanner>
+    </RecommendWrapper>
   );
 }
 
