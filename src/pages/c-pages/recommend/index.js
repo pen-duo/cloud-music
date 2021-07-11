@@ -1,12 +1,29 @@
 import React, { memo } from "react";
 
-import { RecommendWrapper } from "./style";
+import {
+  RecommendWrapper,
+  Content,
+  RecommendLeft,
+  RecommendRight,
+} from "./style";
 
 import MHTopBanner from "./c-cpns/top-banner";
+import MHHotRecommend from "./c-cpns/hot-recommend";
+import MHNewAlbum from "./c-cpns/new-album";
+import MHRecommendRanking from "./c-cpns/recommend-ranking";
+
 function MHRecommend() {
   return (
     <RecommendWrapper>
       <MHTopBanner></MHTopBanner>
+      <Content className="wrap-v2">
+        <RecommendLeft>
+          <MHHotRecommend />
+          <MHNewAlbum />
+          <MHRecommendRanking />
+        </RecommendLeft>
+        <RecommendRight></RecommendRight>
+      </Content>
     </RecommendWrapper>
   );
 }
