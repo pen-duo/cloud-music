@@ -4,3 +4,11 @@ export function getTopBanner() {
     url: "/banner",
   });
 }
+export function getHotRecommends(limit) {
+  return request({
+    url: "/personalized",
+    params: {
+      limit: limit,
+    },
+  });
+}
