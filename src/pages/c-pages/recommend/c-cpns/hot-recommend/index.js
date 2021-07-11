@@ -5,6 +5,7 @@ import { HOT_RECOMMEND_LIMIT } from "@/common/constants";
 import { getHotRecommendAction } from "../../store/actionCreators";
 import { HotRecommendWrapper } from "./style";
 import MHThemeHeadRcm from "@/components/theme-header-rcm";
+import MHSongsCover from "@/components/songs-cover";
 export default memo(function MHHotRecommend() {
   // state
 
@@ -28,7 +29,7 @@ export default memo(function MHHotRecommend() {
       />
       <div className="recommend-list">
         {hotRecommends.map((item, index) => {
-          return <div>{item.name}</div>;
+          return <MHSongsCover key={item.id} info={item} />;
         })}
       </div>
     </HotRecommendWrapper>

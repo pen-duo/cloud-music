@@ -11,7 +11,6 @@ export default memo(function MHDiscover(props) {
     request({
       url: "/banner",
     }).then((res) => {
-      console.log(res);
     });
   }, []);
   return (
