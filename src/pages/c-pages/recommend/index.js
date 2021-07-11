@@ -1,15 +1,13 @@
 import React, { memo, useEffect } from "react";
 import { getTopBannerAction } from "./store/actionCreators";
-import { useSelector, useDispatch } from "react-redux";
-function MHRecommend(props) {
-  //  获取数据,进行dispatch操作
+import { useSelector, useDispatch, shallowEqual } from "react-redux";
+function MHRecommend() {
   const { topBanners } = useSelector((state) => {
     return {
-      topBanners: state.recommend.topBanners,
+      topBanners: state.getIn(["recommend", "topBanners"]),
     };
-  });
+  }, shallowEqual);
   const dispatch = useDispatch();
-  // 发送网络请求
   useEffect(() => {
     dispatch(getTopBannerAction());
   }, [dispatch]);
